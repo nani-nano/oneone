@@ -1,5 +1,10 @@
 
 clear
+echo "Update"
+# update apt-get
+sudo apt-get update &>/dev/null
+printf " [ OK ]"
+
 echo "Check the package and install"
 while read -r line; do
    chk=$(sudo dpkg-query -l | grep $line | wc -l)
